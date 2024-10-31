@@ -10,7 +10,7 @@ function showSlide(index) {
     currentIndex = totalSlides - 1;
   }
 
-  const newTransform = `translateX(-${currentIndex * 100}%)`;
+  const newTransform = `translateX(-${currentIndex * 105}%)`;
   slides.forEach(slide => {
     slide.style.transform = newTransform;
     slide.style.transition = "transform 0.5s ease";  // Optional: Tambahkan animasi

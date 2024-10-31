@@ -1,7 +1,88 @@
+/* Untuk layar kecil seperti tablet */
+@media (max-width: 768px) {
+    .nav ul li a {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .logo img {
+        width: 180px;
+        padding-left: 20px;
+    }
+    .about .container {
+        flex-direction: column; /* Susun elemen secara vertikal */
+        align-items: center; /* Pusatkan elemen dalam kolom */
+        text-align: center; /* Rata tengah teks */
+    }
+    .about .container img {
+        max-width: 90%; /* Pastikan gambar tidak terlalu besar */
+        margin-bottom: 20px;
+    }
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 10px;
+    }
+    .container-cikarang {
+        padding: 30px;
+    }
+    .container-cikarang .text {
+        padding-left: 20px;
+    }
+}
+
+/* Untuk layar lebih kecil seperti ponsel */
+@media (max-width: 480px) {
+    .nav ul li a {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .logo img {
+        width: 150px;
+        padding-left: 10px;
+    }
+    .about h1 {
+        font-size: 30px;
+    }
+    .about .text p {
+        padding-top: 10px;
+    }
+    .about .container {
+        flex-direction: column; /* Tetap dalam susunan vertikal */
+        text-align: center;
+    }
+    .about .container img {
+        order: -1; /* Pastikan gambar tetap di atas teks */
+        max-width: 100%; /* Lebarkan gambar hingga 100% dari kontainer */
+        margin-bottom: 15px; 
+    }
+    .card {
+        grid-template-columns: 1fr;
+        padding: 5px;
+        gap: 10px;
+    }
+    .container-cikarang {
+        padding: 20px;
+    }
+    .spek {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .spek-content {
+        padding-inline: 20px;
+    }
+    .lpblog .btnbox {
+        font-size: 16px;
+        padding: 8px;
+        margin-top: 10px;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -85,68 +166,14 @@ header{
     background-color: #1B2147;
 }
 
-/*  home */
-.home {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background:url(../image/dreamy.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home .content {
-    max-width: 50rem;
-}
-
-.home .content h3{
-    font-size: 6rem;
-    text-transform: uppercase;
-    color: white;
-}
-
-.home .content p {
-    font-size: 1rem;
-    font-weight: lighter;
-    line-height: 1.8;
-    padding: 1rem 0;
-    color: white;
-}
-
-.home .content .btnbox {
-    font-size: 20px;
-    padding: 15px;
-    margin-top: 15px;
-    padding-left: 30px;
-    padding-right: 30px;
-    display: inline-block;
-    background-color: aliceblue;
-    border-radius: 50px;
-}
-
-.home .content .btnbox:hover {
-    border: solid 1px aliceblue;
-    background-color: #1B2147;
-    transition: 0.4s;
-}
-
-.home .content .btn a {
-    color: black;
-}
-
-.home .content .btn a:hover{
-    color: aliceblue;
-}
-
-/* home end */
-
-
 .about .container{
     margin: 100px 50px 50px 50px;
     display: flex;
     padding: 20px 20px 0px 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    flex-direction: row; /* Default horizontal layout untuk layar besar */
+    align-items: center;
 }
 
 .about .text{
@@ -155,7 +182,7 @@ header{
     align-items: center;
 }
 .about h1{
-    font-size: 44px;
+    font-size: 40px;
     color: #1B2147;
 }
 
@@ -195,16 +222,15 @@ header{
 }
 
 .about .container img{
-    display: block;
-    margin: auto;
-    width: 4000px;
-    max-width: 45%;
+    max-width: 45%; /* Atur ukuran gambar untuk layar besar */
+    margin-left: auto; /* Pastikan gambar tetap di sebelah kanan */
     border-radius: 20px;
 }
 .proyek{
     background-color: #7272720e;
     border-radius: 10px;
     position: relative;
+    color: #1B2147;
 
 }
 .proyek .container{
@@ -213,12 +239,13 @@ header{
     width: auto;
     overflow-x: hidden;
     padding: 15px;
+    margin-bottom: 20px;
 
 }
 .proyek-rumah .proyek-btn{
     background-color: #fff;
-    border: 0px solid #000;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    border: 1px solid #000;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     color: #000;
     cursor: pointer;
@@ -226,6 +253,12 @@ header{
     margin: 10px auto;
     padding: 5px 10px;
     display: block;
+}
+.proyek-btn:hover{
+    background-color: #DFB962;
+    transition: 0.3s;
+    color: #fff;
+    border: none;
 }
 .proyek h1{
     text-align: center;
@@ -270,13 +303,14 @@ header{
 }
 footer{
     background-color: aliceblue;
-
+    color: #1B2147;
+    font-size: 14px;
 }
 
 footer .container{
     display: flex;
     justify-content: space-around;
-    padding: 50px 50px 50px 10px;
+    padding: 30px 0px 30px 0px;
 }
 footer .telp{
     display: flex;
@@ -302,16 +336,10 @@ footer .alamat{
     margin-top: 10px;
     line-height: 1.5;
 }
-footer .logo-footer{
-    display: flex;
-}
-footer .logo-footer h2{
-    margin: 10px 0px 0px 10px;
-}
-footer img{
-    width: 80px;
-    height: 90px;
 
+footer img{
+    width: 135px;
+    height: auto;
 }
 
 /* TAMPILAN PROYEK */
@@ -320,6 +348,18 @@ footer img{
     margin-top: 100px;
     padding: 20px 20px 20px 20px;
     border-radius: 5px;
+}
+.container-proyek .proyek-btn{
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    display: block;
 }
 .card{
     display: grid;
@@ -443,4 +483,55 @@ footer img{
 .spek .spek-content{
     justify-content: center;
     padding-inline: 44px;
+}
+/* lp blog */
+.lpblog{
+    line-height: 1.5;
+    width: 100%;
+    min-height: 350px;
+    background: #1B2147;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.lpblog-text{
+    color: white;
+    text-align: center;
+}
+
+.lpblog-tittle{
+    font-size: 40px;
+}
+
+.lpblog-sub{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.lpblog .btn a{
+    color: black;
+}
+
+.lpblog .btn a:hover{
+    color: aliceblue;
+}
+
+.lpblog .btnbox{
+    line-height: 1.5;
+    line-break: auto;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: inline-block;
+    background-color: aliceblue;
+    border-radius: 50px;
+}
+
+.lpblog .btnbox:hover{
+    
+    background-color: #DFB962;
+    transition: 0.4s;
 }
